@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SuperShop — Fresh. Simple. Better.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="#home" class="logo">
+        Super<span>Shop</span>
+    </a>
+
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="search-btn" onclick="openSearch()">⌕</button>
+        <button class="cart-btn" onclick="showCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-panel" id="searchPanel">
+
+    <div class="search-inner">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            onkeyup="searchProducts()"
+        >
+
+        <button onclick="closeSearch()">×</button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-label">YOUR EVERYDAY SUPERMARKET</p>
+
+        <h1>
+            Freshness You Can
+            <span>Trust.</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover fresh groceries, premium essentials and
+            everything your home needs — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn btn-primary">
+                Explore Products
+            </a>
+
+            <a href="#categories" class="btn btn-outline">
+                View Categories
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>500+</strong>
+                <span>Products</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Freshness</span>
+            </div>
+
+            <div>
+                <strong>24/7</strong>
+                <span>Support</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="intro-text">
+
+        <p class="section-label">WELCOME TO SUPERSHOP</p>
+
+        <h2>
+            Everything you need,
+            <span>under one roof.</span>
+        </h2>
+
+    </div>
+
+    <p class="intro-description">
+        From farm-fresh fruits and vegetables to daily groceries,
+        dairy, bakery and household essentials — SuperShop makes
+        everyday shopping easier, faster and better.
+    </p>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories section" id="categories">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="section-label">EXPLORE OUR STORE</p>
+
+            <h2>Shop by Category</h2>
+        </div>
+
+        <p>
+            Carefully selected essentials for
+            every part of your everyday life.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card large">
+            <img src="assets/images/fruits.jpg" alt="Fresh Fruits">
+
+            <div class="category-info">
+                <span>01</span>
+                <h3>Fresh Fruits</h3>
+                <p>Nature's finest selection</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/vegetables.jpg" alt="Fresh Vegetables">
+
+            <div class="category-info">
+                <span>02</span>
+                <h3>Vegetables</h3>
+                <p>Farm fresh every day</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/grocery.jpg" alt="Groceries">
+
+            <div class="category-info">
+                <span>03</span>
+                <h3>Groceries</h3>
+                <p>Everyday essentials</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/dairy.jpg" alt="Dairy Products">
+
+            <div class="category-info">
+                <span>04</span>
+                <h3>Dairy</h3>
+                <p>Fresh & wholesome</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/beverages.jpg" alt="Beverages">
+
+            <div class="category-info">
+                <span>05</span>
+                <h3>Beverages</h3>
+                <p>Refresh your day</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/bakery.jpg" alt="Bakery">
+
+            <div class="category-info">
+                <span>06</span>
+                <h3>Bakery</h3>
+                <p>Freshly baked goodness</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/kids-toys.jpg" alt="Kids and Toys">
+
+            <div class="category-info">
+                <span>07</span>
+                <h3>Kids & Toys</h3>
+                <p>Fun for little ones</p>
+            </div>
+        </div>
+
+
+        <div class="category-card">
+            <img src="assets/images/household.jpg" alt="Household">
+
+            <div class="category-info">
+                <span>08</span>
+                <h3>Household</h3>
+                <p>For a better home</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products section" id="products">
+
+    <div class="section-heading center">
+
+        <p class="section-label">OUR SELECTION</p>
+
+        <h2>Featured Products</h2>
+
+        <p>
+            Popular picks from our store,
+            selected for quality and freshness.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img src="assets/images/fruits.jpg" alt="Fresh Fruits">
+
+                <span class="product-tag">FRESH</span>
+
+                <button onclick="addToCart('Fresh Fruits')">
+                    +
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p>Fresh Produce</p>
+
+                <h3>Premium Fresh Fruits</h3>
+
+                <div class="product-bottom">
+
+                    <strong>৳450</strong>
+
+                    <span>★★★★★</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img src="assets/images/vegetables.jpg" alt="Vegetables">
+
+                <span class="product-tag">FRESH</span>
+
+                <button onclick="addToCart('Fresh Vegetables')">
+                    +
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p>Fresh Produce</p>
+
+                <h3>Organic Vegetables</h3>
+
+                <div class="product-bottom">
+
+                    <strong>৳280</strong>
+
+                    <span>★★★★★</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img src="assets/images/dairy.jpg" alt="Dairy Products">
+
+                <span class="product-tag">POPULAR</span>
+
+                <button onclick="addToCart('Premium Dairy')">
+                    +
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p>Dairy</p>
+
+                <h3>Premium Dairy Selection</h3>
+
+                <div class="product-bottom">
+
+                    <strong>৳320</strong>
+
+                    <span>★★★★★</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img src="assets/images/bakery.jpg" alt="Bakery">
+
+                <span class="product-tag">NEW</span>
+
+                <button onclick="addToCart('Fresh Bakery')">
+                    +
+                </button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p>Bakery</p>
+
+                <h3>Fresh Bakery Collection</h3>
+
+                <div class="product-bottom">
+
+                    <strong>৳250</strong>
+
+                    <span>★★★★★</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OFFER ================= -->
+
+<section class="offer-section" id="offers">
+
+    <div class="offer-image">
+
+        <img src="assets/images/household.jpg" alt="Special Offer">
+
+    </div>
+
+    <div class="offer-content">
+
+        <p class="section-label">LIMITED TIME OFFER</p>
+
+        <h2>
+            Better shopping.
+            <span>Better savings.</span>
+        </h2>
+
+        <p>
+            Enjoy special discounts on selected products
+            and make your everyday shopping more rewarding.
+        </p>
+
+        <div class="discount">
+            <strong>30%</strong>
+            <span>OFF</span>
+        </div>
+
+        <a href="#products" class="btn btn-primary">
+            Shop Offers
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="benefit-icon">🚚</div>
+
+        <div>
+            <h3>Free Delivery</h3>
+
+            <p>
+                Free delivery on qualifying orders,
+                right to your doorstep.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">✦</div>
+
+        <div>
+            <h3>Premium Quality</h3>
+
+            <p>
+                Carefully selected products
+                with quality you can trust.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">↻</div>
+
+        <div>
+            <h3>Easy Shopping</h3>
+
+            <p>
+                Simple, convenient and
+                stress-free shopping experience.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">♡</div>
+
+        <div>
+            <h3>Customer First</h3>
+
+            <p>
+                Your satisfaction is always
+                at the heart of what we do.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about section" id="about">
+
+    <div class="about-content">
+
+        <p class="section-label">WHY SUPERSHOP</p>
+
+        <h2>
+            More than a store.
+            <span>A better way to shop.</span>
+        </h2>
+
+        <p>
+            SuperShop is designed around one simple idea —
+            everyday shopping should feel easy, reliable and enjoyable.
+        </p>
+
+        <p>
+            We bring fresh food, daily essentials and household
+            products together so you can spend less time searching
+            and more time enjoying what matters.
+        </p>
+
+        <a href="#contact" class="text-link">
+            Discover SuperShop →
+        </a>
+
+    </div>
+
+
+    <div class="about-visual">
+
+        <div class="about-card">
+
+            <strong>01</strong>
+
+            <h3>Fresh Every Day</h3>
+
+            <p>
+                Quality products selected
+                for your everyday needs.
+            </p>
+
+        </div>
+
+        <div class="about-card dark">
+
+            <strong>02</strong>
+
+            <h3>Made for You</h3>
+
+            <p>
+                A shopping experience
+                designed around simplicity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <p class="section-label">READY WHEN YOU ARE</p>
+
+    <h2>
+        Fresh choices.
+        <span>Simple shopping.</span>
+    </h2>
+
+    <p>
+        Everything your home needs,
+        just a few clicks away.
+    </p>
+
+    <a href="#products" class="btn btn-light">
+        Start Shopping
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                Super<span>Shop</span>
+            </a>
+
+            <p>
+                Fresh products, trusted quality
+                and a better everyday shopping experience.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Explore</h4>
+
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#offers">Offers</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Company</h4>
+
+            <a href="#about">About Us</a>
+            <a href="#">Our Story</a>
+            <a href="#">Delivery</a>
+            <a href="#">Support</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Contact</h4>
+
+            <p>Dhaka, Bangladesh</p>
+            <p>+880 1XXXXXXXXX</p>
+            <p>hello@supershop.com</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 SuperShop. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
